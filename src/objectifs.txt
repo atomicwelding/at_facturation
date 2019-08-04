@@ -1,8 +1,6 @@
 Logiciel comptable de facturation, livre de recettes, pour l'entreprise AU TOP, soutien scolaire
   
   
-  
-  
                   +----------------------------------------------------------------------------+
                   |   at_facturation : livre de recettes                                 |-|o|x|
                   +----------------------------------------------------------------------------+
@@ -39,3 +37,35 @@ Logiciel comptable de facturation, livre de recettes, pour l'entreprise AU TOP, 
       |                       |                                                 |
       v                       v                                                 v
 Ajouter facture           Supprimer facture                               Imprimer livre des recettes
+
+
+=== Ajouter facture : 
+
+Système de base de client sommaire, si id existe déjà dans la base de donnée    => remplissage nom adresse auto 
+                                    sinon si existe mais nom et adresse remplie => remplace donnée bdd
+                                    sinon                                       => ajoute nouveau client
+
+                    +----------------------------------------------------------+
+                    |  at_facturation : ajouter une nouvelle facture           |
+                    +----------------------------------------------------------+
+                    |    id      date          nom      adresse                |
+                    |   +---+   +--------+    +-----+  +-----------+           |
+                    |   |   |   |        |    |     |  |           |           |
+                    |   +---+   +--------+    +-----+  +-----------+           |
+                    |                                                          |
+                    |   tarif    qté              nature                       |
+                    |   +---+   +----------+     +----------+                  |
+                    |   |   |   |          |     |          |                  |
+                    |   +---+   +----------+     +----------+                  |
+                    |                                +-----------+             |
+                    |                                |  valider  |             |
+                    |                                +-----------+             |
+                    +----------------------------------------------------------+
+
+=== Supprimer facture : 
+
+Supprimer la facture sélectionnée
+
+=== Imprimer livre des recettes :
+
+
