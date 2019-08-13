@@ -36,7 +36,7 @@ def init(master):
 
     # ville
     Label(window, text="Ville :").place(x=370, y=40, height=20)
-    Entry(window).place(x=409, y=40, height=21, width=120)
+    Entry(window).place(x=409, y=40, height=21, width=122)
 
 #########
 
@@ -57,6 +57,10 @@ def init(master):
     # quantité
     Label(window, text="Qté :").place(x=305, y=80, height=20)
     MaxLengthEntry(window, maxlength=4).place(x=340, y=80, height=21, width=52)
+
+    # nature du règlement
+    Label(window, text="Règ. :").place(x=395, y=80, height=20)
+    Entry(window).place(x=430, y=80, height=21, width=100)
 
     # valider
     Button(window, text="Valider").place(x=450, y=120, height=21)

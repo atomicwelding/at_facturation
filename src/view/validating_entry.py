@@ -11,7 +11,7 @@ class ValidatingEntry(Entry):
         Entry.__init__(*(self, master), kw)
         self.__value = value
         self.__variable = StringVar()
-        self.__variable.set(value)
+        self.__variable.set("") # corrected the original code version, because it was prefilling Entry widgets with braces
         self.__variable.trace("w", self.__callback)
         self.config(textvariable=self.__variable)
 

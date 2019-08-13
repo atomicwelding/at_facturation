@@ -38,8 +38,8 @@ def init():
     tree.heading("montant", text="montant HT (€)")
     tree.heading("reglement", text="reglement")
 
-    tree.insert("", 1, iid=None, text="lol", values=("30/04/16", "2016-04-002007", "M. Ronan Chatain", "soutien scolaire", "30", "espèces"))
-    tree.insert("", 2, iid=None, text="lol", values=("31/04/16", "2016-04-003300", "M. Gilles Benet", "soutien scolaire", "80", "chèque"))
+    tree.insert("", 1, iid=None, text="lol", values=("30/04/16", "2016-04-002007", "M. Abraham Lincoln", "soutien scolaire", "30", "espèces"))
+    tree.insert("", 2, iid=None, text="lol", values=("31/04/16", "2016-04-003300", "M. Donald Trump", "soutien scolaire", "80", "chèque"))
 
     tree.grid(row= 0, column=0, columnspan=3, sticky="nsew")
 
