@@ -14,9 +14,6 @@ cursor.execute('''
         ville TEXT
     )''')
 
-db.commit()
-
-cursor = db.cursor()
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS factures(
         id_facture INTEGER,
@@ -27,6 +24,6 @@ cursor.execute('''
         reglement TEXT
     )
 ''')
-db.commit()
 
+db.commit()
 db.close()

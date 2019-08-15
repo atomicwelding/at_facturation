@@ -1,4 +1,4 @@
-""" Interface principale 
+""" Main interface ; by weld
 """
 from tkinter import *
 from tkinter.ttk import *
@@ -8,7 +8,7 @@ sys.path.insert(0, "./model/")
 sys.path.insert(0, "./view/")
 sys.path.insert(0, "./controller/")
 
-from ajouter_facture_UI import init as add_bill
+from add_bills_UI import init as add_bill
 
 def testCallback():
     print("no callback")

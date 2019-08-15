@@ -1,9 +1,10 @@
-""" Ajouter une nouvelle facture au livre des recettes
+""" Add bills to the cashbook ; by weld
 """
 
-""" J'ai utilisé les méthodes "place()" plutôt que grid() ou pack() car ces dernières me semblent approximatives.
-Le résultat en est un code un peu moins joli, mais qui me permet de placer au pixel près tous mes widgets.
+""" I used "place()" methods instead of "grid()" or "pack()", because I think they are less consistent and accurate.
+As a result, the code is less pretty but allows me to position widgets, pixel perfect.
 """
+
 from tkinter import *
 from tkinter.ttk import *
 

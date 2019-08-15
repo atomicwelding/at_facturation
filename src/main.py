@@ -1,4 +1,4 @@
-""" Logiciel comptable de facturation, livre de recettes
+""" Accountancy software, leading to manage bills and user, for "auto-entrepreneurs"
 ; by weld, mit license
 """
 
@@ -9,7 +9,7 @@ sys.path.insert(0, "./model/")
 sys.path.insert(0, "./view/")
 sys.path.insert(0, "./controller/")
 
-import livre_recettes_UI as mainWindow
+import cashbook_UI as mainWindow
 
 if __name__ == "__main__":
     mainWindow.init()
