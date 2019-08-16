@@ -2,26 +2,28 @@
 """
 import sqlite3 as s
 
-db = s.connect("../model/database.db")
+open("./model/database.db", "x").close()
+
+db = s.connect("./model/database.db")
 
 cursor = db.cursor()
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS utilisateurs(
-        id_client INTEGER,
-        nom TEXT,
-        voie TEXT,
-        cp INTEGER, 
-        ville TEXT
+    CREATE TABLE IF NOT EXISTS users(
+        id_user INTEGER,
+        name TEXT,
+        street TEXT,
+        ZIP INTEGER, 
+        city TEXT
     )''')
 
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS factures(
-        id_facture INTEGER,
-        id_client INTEGER,
+    CREATE TABLE IF NOT EXISTS bills(
+        id_bill INTEGER,
+        id_user INTEGER,
         date TEXT,
-        taux_horaire INTEGER,
-        qte INTEGER,
-        reglement TEXT
+        hourly_rate INTEGER,
+        qty INTEGER,
+        pay TEXT
     )
 ''')
 

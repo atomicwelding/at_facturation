@@ -8,9 +8,22 @@ As a result, the code is less pretty but allows me to position widgets, pixel pe
 from tkinter import *
 from tkinter.ttk import *
 
-from validating_entry import * 
+from validating_entry import *
+
+import add_bills as ab
+
+
+# def test__(name):
+#     try:
+#         ab.add_user(0, name, "John st", "00000", "Barbès")
+#     except Exception as e:
+#         print(e)
 
 def init(master):
+    
+    #id, zip = (IntVar,)*2
+    name, street, city = (StringVar(),)*3
+
     window = Toplevel(master)
     window.geometry("545x175+300+300")
     window.title("Ajouter une nouvelle facture")
@@ -22,10 +35,11 @@ def init(master):
     MaxLengthEntry(window, maxlength=4).place(x=25, y=0, height=21, width=48)
 
 #########
-
+    
     # nom
     Label(window, text="Nom :").place(x=0, y=40, height=20)
-    Entry(window).place(x=40, y=40, height=21, width=100)
+    Entry(window, textvariable=name).place(x=40, y=40, height=21, width=100)
+
 
     # adresse
     Label(window, text="Voie :").place(x=140, y=40, height=20)
@@ -63,8 +77,10 @@ def init(master):
     Label(window, text="Règ. :").place(x=395, y=80, height=20)
     Entry(window).place(x=430, y=80, height=21, width=100)
 
-    # valider
-    Button(window, text="Valider").place(x=450, y=120, height=21)
+    def update():
+        print(name.get())
 
-    
+    # valider
+    Button(window, text="Valider", command=update).place(x=450, y=120, height=21)
+
     window.mainloop()
