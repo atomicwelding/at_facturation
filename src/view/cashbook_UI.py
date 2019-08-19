@@ -17,7 +17,8 @@ def init():
     # init
     window = Tk()
 
-    window.title('at_facturation')
+    window.title("at_facturation")
+    window.iconbitmap("./rsrc/favicon.ico")
 
     # livre des recettes
     tree = Treeview(window)

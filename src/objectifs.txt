@@ -62,6 +62,11 @@ Système de base de client sommaire, si id existe déjà dans la base de donnée
                     |                                +-----------+             |
                     +----------------------------------------------------------+
 
+Générer l'id de la facture:
+      2016 - 002   001
+     |____| |___| |___|
+      Date   ID c  n-ième facture
+
 === Supprimer facture : 
 
 Supprimer la facture sélectionnée

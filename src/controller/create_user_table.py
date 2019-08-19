@@ -8,8 +8,8 @@ db = s.connect("./model/database.db")
 
 cursor = db.cursor()
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS users(
-        id_user INTEGER,
+    CREATE TABLE IF NOT EXISTS clients(
+        id_client INTEGER,
         name TEXT,
         street TEXT,
         ZIP INTEGER, 
@@ -18,8 +18,8 @@ cursor.execute('''
 
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS bills(
-        id_bill INTEGER,
-        id_user INTEGER,
+        id_bill TEXT,
+        id_client INTEGER,
         date TEXT,
         hourly_rate INTEGER,
         qty INTEGER,
