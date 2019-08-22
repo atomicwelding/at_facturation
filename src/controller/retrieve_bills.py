@@ -27,4 +27,4 @@ def replace_id_by_name(id_client):
     r = cursor.fetchone()
     db.commit()
     db.close()
-    return r
+    return r[0]

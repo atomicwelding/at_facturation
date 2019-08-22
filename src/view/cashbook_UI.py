@@ -44,7 +44,7 @@ def init():
         tree.delete(*tree.get_children())
         for i, x in enumerate(retrieve_all_bills()):
             tree.insert("", i+1, iid=None, text="lol", values=(x[2], x[0], replace_id_by_name(x[1]), "soutien scolaire", int(x[3])*int(x[4]), x[5]))
-        window.after(16, refresh)
+        # window.after(16, refresh)
 
     tree.grid(row= 0, column=0, columnspan=3, sticky="nsew")
 
