@@ -108,6 +108,10 @@ def init(master):
             add_client(int(id.get()), name.get(), street.get(), int(zip.get()), city.get())
             add_bill(int(id.get()), date.get(), int(hourly_rate.get()), int(quantity.get()), paymeth.get())
 
+            window.destroy()
+        
+        
+
     # validate
     Button(window, text="Valider", command=update).place(x=450, y=120, height=21)
 

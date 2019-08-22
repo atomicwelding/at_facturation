@@ -9,9 +9,10 @@ sys.path.insert(0, "./view/")
 sys.path.insert(0, "./controller/")
 
 from add_bills_UI import init as add_bill
+from retrieve_bills import retrieve_all_bills, replace_id_by_name
 
 def testCallback():
-    print("no callback")
+    retrieve_all_bills()
 
 def init():
     # init
@@ -20,7 +21,7 @@ def init():
     window.title("at_facturation")
     window.iconbitmap("./rsrc/favicon.ico")
 
-    # livre des recettes
+    # cashbook
     tree = Treeview(window)
     tree['show'] = 'headings'
 
@@ -39,22 +40,26 @@ def init():
     tree.heading("montant", text="montant HT (€)")
     tree.heading("reglement", text="reglement")
 
-    tree.insert("", 1, iid=None, text="lol", values=("30/04/16", "2016-04-002007", "M. Abraham Lincoln", "soutien scolaire", "30", "espèces"))
-    tree.insert("", 2, iid=None, text="lol", values=("31/04/16", "2016-04-003300", "M. Donald Trump", "soutien scolaire", "80", "chèque"))
+    def refresh():
+        tree.delete(*tree.get_children())
+        for i, x in enumerate(retrieve_all_bills()):
+            tree.insert("", i+1, iid=None, text="lol", values=(x[2], x[0], replace_id_by_name(x[1]), "soutien scolaire", int(x[3])*int(x[4]), x[5]))
+        window.after(16, refresh)
 
     tree.grid(row= 0, column=0, columnspan=3, sticky="nsew")
 
-    # imprimer les recettes
-    print_all_bills = Button(window, text="Imprimer", command=testCallback)
+    # print the bill
+    print_all_bills = Button(window, text="Actualiser", command=testCallback)
     print_all_bills.grid(row=1, column=0, sticky="sw")
 
-    # ajouter une facture
+    # add a bill
     add_new_bill = Button(window, text="Ajouter", command=lambda: add_bill(window))
     add_new_bill.grid(row=1, column=1, sticky="se")
 
-    # supprimer une facture
+    # remove a bill
     remove_old_bill = Button(window, text="Supprimer", command=testCallback)
     remove_old_bill.grid(row=1, column=2, sticky="se")
 
     window.grid_columnconfigure(0, weight=1)
+    window.after(16, refresh)
     window.mainloop()
